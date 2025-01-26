@@ -21,7 +21,7 @@ image.show()
 
 st.title('Новая улучшенная классификации изображений в облаке Streamlit')
 title = st.text_input("Movie title", "Life of Brian")
-img = load_image()
+
 result = st.button('Распознать изображение')
 if result:
     x = preprocess_image(img)
