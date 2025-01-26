@@ -16,13 +16,15 @@ def res (text):
 	})
 	image = Image.open(io.BytesIO(image_bytes))
 	image.show()
+	return image
 
 st.title('Новая улучшенная классификации изображений в облаке Streamlit')
 title = st.text_input("Movie title", "Life of Brian")
 
 result = st.button('Распознать изображение')
 if result:
-	res(title)
+	img = res(title)
+	st.image(img, caption="result")
 	
     # x = preprocess_image(img)
     # preds = model.predict(x)
