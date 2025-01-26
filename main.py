@@ -10,7 +10,7 @@ def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.content
 
-def res (text)
+def res (text):
 	image_bytes = query({
 	"inputs": text,
 	})
