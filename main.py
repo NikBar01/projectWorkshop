@@ -1,5 +1,7 @@
 import requests
 import streamlit as st
+import io
+from PIL import Image
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": "Bearer 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"}
@@ -13,8 +15,7 @@ image_bytes = query({
 })
 
 # You can access the image with PIL.Image for example
-import io
-from PIL import Image
+
 image = Image.open(io.BytesIO(image_bytes))
 image.show()
 
