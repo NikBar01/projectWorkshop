@@ -22,7 +22,9 @@ title = st.text_input("Movie title", "Life of Brian")
 
 result = st.button('Распознать изображение')
 if result:
-    x = preprocess_image(img)
-    preds = model.predict(x)
-    st.write('**Результаты распознавания:**')
-    print_predictions(preds)
+	res(title)
+	
+    # x = preprocess_image(img)
+    # preds = model.predict(x)
+    # st.write('**Результаты распознавания:**')
+    # print_predictions(preds)
