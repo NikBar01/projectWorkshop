@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 import io
 from PIL import Image
-from transformers import pipeline
+from transformers import T5ForConditionalGeneration, T5Tokenizer
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": "Bearer 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"}
@@ -30,13 +30,18 @@ def res (text):
 	image = Image.open(io.BytesIO(image_bytes))
 	return image
 
-model_checkpoint = "Helsinki-NLP/opus-mt-en-ru"
-translator = pipeline("translation", model=model_checkpoint)
-result = translator("How are you?")
-result = result[0]
+model_name = 'jbochi/madlad400-3b-mt'
+model = T5ForConditionalGeneration.from_pretrained(model_name, device_map="auto")
+tokenizer = T5Tokenizer.from_pretrained(model_name)
+
+text = "<2pt> I love pizza!"
+input_ids = tokenizer(text, return_tensors="pt").input_ids.to(model.device)
+outputs = model.generate(input_ids=input_ids)
+
+translet = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 st.title('Преобразование текста в изображение')
-title = st.text_input("Описание", "")
+title = st.text_input(translet, "")
 
 print(result)
 
