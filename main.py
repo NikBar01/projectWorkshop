@@ -2,7 +2,6 @@ import requests
 import streamlit as st
 import io
 from PIL import Image
-import torch
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": "Bearer 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"}
