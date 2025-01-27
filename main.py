@@ -30,7 +30,7 @@ def res (text):
 	return image
 
 st.title('Преобразование текста в изображение')
-title = st.text_input("Описание", "")
+title = st.text_input("Описание для генирации картинки", "")
 output = queryTR({
     "inputs": title,
 })
