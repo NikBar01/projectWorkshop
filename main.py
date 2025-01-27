@@ -44,8 +44,6 @@ def res (text):
 st.title('Преобразование текста в изображение')
 title = st.text_input("Описание", "")
 
-print(result)
-
 result = st.button('Получить изображение')
 if result:
 	img = res(title)
