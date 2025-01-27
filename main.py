@@ -3,7 +3,7 @@ import streamlit as st
 import io
 from PIL import Image
 from transformers import T5ForConditionalGeneration, T5Tokenizer
-from PyTorch
+from torch
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": "Bearer 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"}
