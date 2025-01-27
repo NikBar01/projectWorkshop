@@ -31,18 +31,18 @@ def res (text):
 	image = Image.open(io.BytesIO(image_bytes))
 	return image
 
-model_name = 'jbochi/madlad400-3b-mt'
-model = T5ForConditionalGeneration.from_pretrained(model_name, device_map="auto")
-tokenizer = T5Tokenizer.from_pretrained(model_name)
+# model_name = 'jbochi/madlad400-3b-mt'
+# model = T5ForConditionalGeneration.from_pretrained(model_name, device_map="auto")
+# tokenizer = T5Tokenizer.from_pretrained(model_name)
 
-text = "<2pt> I love pizza!"
-input_ids = tokenizer(text, return_tensors="pt").input_ids.to(model.device)
-outputs = model.generate(input_ids=input_ids)
+# text = "<2pt> I love pizza!"
+# input_ids = tokenizer(text, return_tensors="pt").input_ids.to(model.device)
+# outputs = model.generate(input_ids=input_ids)
 
-translet = tokenizer.decode(outputs[0], skip_special_tokens=True)
+# translet = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 st.title('Преобразование текста в изображение')
-title = st.text_input(translet, "")
+title = st.text_input("Описание", "")
 
 print(result)
 
