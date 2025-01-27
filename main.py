@@ -36,7 +36,7 @@ result = translator("How are you?")
 result = result[0]
 
 st.title('Преобразование текста в изображение')
-title = st.text_input(result, "")
+title = st.text_input("Описание", "")
 
 print(result)
 
