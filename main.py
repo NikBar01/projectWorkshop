@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 import io
 from PIL import Image
-import requests
+from transformers import pipeline
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": "Bearer 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"}
@@ -30,8 +30,15 @@ def res (text):
 	image = Image.open(io.BytesIO(image_bytes))
 	return image
 
+model_checkpoint = "Helsinki-NLP/opus-mt-en-ru"
+translator = pipeline("translation", model=model_checkpoint)
+result = translator("How are you?")
+result = result[0]
+
 st.title('Преобразование текста в изображение')
-title = st.text_input("Текст запроса", "")
+title = st.text_input(result, "")
+
+print(result)
 
 result = st.button('Получить изображение')
 if result:
