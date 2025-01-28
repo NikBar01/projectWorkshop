@@ -5,10 +5,10 @@ from PIL import Image
 
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer "+st.secrets["db_username"]}
 
 API_URL_TR = "https://api-inference.huggingface.co/models/Helsinki-NLP/opus-mt-ru-en"
-headersTR = {"Authorization": "Bearer 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"}
+headersTR = {"Authorization": "Bearer "+st.secrets["db_username"]}
 
 
 def queryTR(payload):
