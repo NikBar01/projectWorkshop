@@ -1,4 +1,6 @@
-requests == 2.31.0      
-streamlit == 1.32.0     
-Pillow == 10.2.0 
+--extra-index-url https://download.pytorch.org/whl/cpu
 fastapi
+uvicorn
+transformers
+torch
+httpx
