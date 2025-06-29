@@ -1,3 +1,31 @@
+# from fastapi import FastAPI
+# from fastapi import APIRouter
+# from fastapi import Request
+# from fastapi.responses import HTMLResponse
+# from fastapi.templating import Jinja2Templates
+# import io
+#
+# app = FastAPI()
+#
+# templates = Jinja2Templates(directory="templates")
+# general_pages_router = APIRouter()
+#
+#
+
+#
+# # @app.post("/example")
+# # async def root():
+# # 	return ""
+# #
+# #
+# # @app.get("/hello/{name}")
+# # async def say_hello(name: str):
+# #     return {"message": f"Hello {name}"}
+#
+# @general_pages_router.post("/example")
+# async def home():
+#     return templates.TemplateResponse("example.html")
+
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ title }}</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+
+    <!-- Отображение изображения -->
+    <img src="{{ url_for('static', path=image_path) }}" alt="Example Image" width="500">
+
+
+    <!-- Альтернативный вариант с прямым путем -->
+<!--     <img src="/static/{{ image_path }}" alt="Example Image" width="500">-->
+</body>
+</html>
